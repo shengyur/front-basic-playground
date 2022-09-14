@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script defer src="index.js"></script></head>
+<body>
+    <div>test index.html</div>
+    <script>
+        const a = 123
+
+        const foo2 = () => {
+            return a => {
+                console.log(this.a)
+            }
+        }
+        const obj3 = {
+            a:2
+        }
+
+        const obj4 = {
+            a:3
+        }
+
+        var bar = foo2.call(obj3)
+
+        bar.call(obj4)
+    </script>
+</body>
+</html>

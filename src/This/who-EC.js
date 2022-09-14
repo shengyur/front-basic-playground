@@ -1,0 +1,35 @@
+// 场景1
+const person = {
+    name: 'Lucas',
+    brother: {
+        name: 'MICK',
+        fn: function(){
+            return this.name
+        }
+    }
+}
+
+// console.log(person.brother.fn())
+
+// 场景2
+const o1 = {
+    text: 'o1',
+    fn: function() {
+        return this.text
+    }
+}
+const o2 = {
+    text: 'o2',
+    fn: o1.fn
+}
+const o3 = {
+    text: 'o3',
+    fn: function(){
+        var fn = o1.fn
+        return fn()
+    }
+}
+
+console.log(o1.fn())
+console.log(o2.fn())
+console.log(o3.fn())
